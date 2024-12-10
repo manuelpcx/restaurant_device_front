@@ -1,0 +1,51 @@
+.restaurant-card {
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-header {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #6a0dad, #9b5fff);
+  }
+  
+  .card-body {
+    padding: 10px 15px;
+    flex-grow: 1;
+  }
+  
+  .list-group-item {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-group-item.operativo {
+    background-color: #d3bde6;
+  }
+  
+  .list-group-item.fallando {
+    background-color: #e6c2f3;
+  }
+  
+  .list-group-item.mantenimiento {
+    background-color: #e3d9f7;
+  }
+  
+  .device-info {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  

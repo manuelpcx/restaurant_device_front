@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import RestaurantList from "./components/RestaurantList";
 
 function App() {
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    fetchRestaurants();
+  }, []);
+
+  const fetchRestaurants = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/restaurants");
+      if (!response.ok) {
+        throw new Error("Error al cargar los restaurantes");
+      }
+      const data = await response.json();
+      setRestaurants(data);
+    } catch (error) {
+      console.error("Error:", error);
+      alert("No se pudieron cargar los datos de los restaurantes.");
+    }
+  };
+  console.log(restaurants)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container my-4">
+      <h1 className="text-center">Gestión de Restaurantes y Dispositivos</h1>
+      <RestaurantList restaurants={restaurants} />
     </div>
   );
 }
