@@ -6,9 +6,9 @@ function getStatusClass(status) {
   switch (status) {
     case "operativo":
       return "operativo";
-    case "fallando":
+    case "warning":
       return "fallando";
-    case "mantenimiento":
+    case "Problemas":
       return "mantenimiento";
     default:
       return "bg-secondary";
@@ -19,9 +19,9 @@ function getStatusBadgeClass(status) {
   switch (status) {
     case "operativo":
       return "badge bg-success";
-    case "fallando":
+    case "warning":
       return "badge bg-danger";
-    case "mantenimiento":
+    case "Problemas":
       return "badge bg-warning";
     default:
       return "badge bg-secondary";
@@ -32,9 +32,9 @@ function getDeviceIcon(status) {
   switch (status) {
     case "operativo":
       return <FaCheckCircle className="text-success me-2" />;
-    case "fallando":
+    case "warning":
       return <FaExclamationCircle className="text-danger me-2" />;
-    case "mantenimiento":
+    case "Problemas":
       return <FaTools className="text-warning me-2" />;
     default:
       return <FaTools className="text-secondary me-2" />;

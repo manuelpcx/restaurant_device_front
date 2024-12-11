@@ -2,6 +2,7 @@
     border-radius: 12px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     height: 100%;
+    width: 70rem;
     display: flex;
     flex-direction: column;
   }
